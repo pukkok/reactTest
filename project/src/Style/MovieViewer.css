@@ -1,0 +1,39 @@
+.movie-viewer{
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    gap: 10px;
+}
+
+.main-img-box{
+    width: 30%;
+    min-width: 500px;
+    height: 100%;
+}
+
+.main-img-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.detail-box{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-box .sub-img-box{
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.detail-box .sub-img-box .img-box img{
+    min-width: 220px;
+    height: 100%;
+}
