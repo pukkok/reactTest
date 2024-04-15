@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Movie({title, genres, cover, rating, summary}){
+function Movie({title, genres, cover, rating}){
     const style = {
         width: '230px',
         height: '500px',

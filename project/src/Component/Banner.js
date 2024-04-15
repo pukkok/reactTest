@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import '../Style/MovieViewer.css'
 
 function Banner ({cover, title, rating, runtime, genres, summary, children}){

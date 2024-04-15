@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 15px;
     width: 100vw;
-    height: 70vh;
+    height: auto;
     display: flex;
     gap: 10px;
 }

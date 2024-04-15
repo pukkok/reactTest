@@ -14,48 +14,48 @@ class App extends Component {
     this.state = {
       loading: true,
       movies: [],
-      pick:[],
-      first: true
+      pick:[]
     }
   }
  
 
-  randomPick = () => {
-    const {movies} = this.state
-    this.num = this.extractNum(movies)
-
-    fetch(`https://yts.mx/api/v2/movie_suggestions.json?movie_id=${this.num}`)
+  randomPick = (id) => {
+    fetch(`https://yts.mx/api/v2/movie_suggestions.json?movie_id=${id}`)
     .then(res => res.json())
     .then(datas => {
-      console.log(datas)
+      // console.log(datas)
       const {data : {movies : sub}} = datas
       this.setState({pick : sub})
     })
-    
   }
 
   pickRandomNumber = (movies) => {
-    return Math.floor( Math.random() * movies.length )
+    return Math.floor(Math.random() * movies.length )
   }
   
-  extractNum = (movies) => {
+  extractNumber = (movies) => {
     let randomNum = this.pickRandomNumber(movies)
 
-    return this.num === randomNum ? this.extractNum(movies) : this.num = randomNum
+    this.num === randomNum ? this.extractNumber(movies) : this.num = randomNum
+
+    return movies[randomNum].id
   }
 
   componentDidMount(){
+    // 최대 30개, 최소평점 7, 제목기준 정렬, 오름차순
     fetch('https://yts.mx/api/v2/list_movies.json?limit=30&minimum_rating=7&sort_by=title&order_by=asc')
     .then( res => res.json())
     .then( result => {
       const {data: {movies}} = result
       console.log(movies)
+      this.randomPick(movies[0].id)
       this.setState({movies, loading: false})
-      setInterval(()=>{
-        this.randomPick()
-      }, 3000);
+        
+      this.timerId = setInterval(()=>{
+          const id = this.extractNumber(movies)
+          this.randomPick(id)
+        }, 3000);      
     })
-
   }
 
 
@@ -89,13 +89,8 @@ class App extends Component {
       return (
         <>
           <Banner
-            key={selected.id}
-            title={selected.title}
-            genres={selected.genres}
-            runtime={selected.runtime}
-            cover={selected.large_cover_image}
-            rating={selected.rating}
-            summary={selected.summary}
+            {...selected}
+            cover = {selected.large_cover_image}
             children={pick.map(data => {
               return(
                 <div key={data.id} className='img-box'>
@@ -110,12 +105,9 @@ class App extends Component {
           {movies.map(movie => {
             return (
               <Movie 
+                {...movie}
                 key={movie.id}
-                title={movie.title}
-                genres={movie.genres}
                 cover={movie.medium_cover_image}
-                summary={movie.summary}
-                rating = {movie.rating}
               ></Movie>
             )
           })}
