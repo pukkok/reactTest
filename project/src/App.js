@@ -48,7 +48,8 @@ class App extends Component {
     .then( result => {
       const {data: {movies}} = result
       console.log(movies)
-      this.randomPick(movies[0].id)
+      const id = this.extractNumber(movies)
+      this.randomPick(id)
       this.setState({movies, loading: false})
         
       this.timerId = setInterval(()=>{
