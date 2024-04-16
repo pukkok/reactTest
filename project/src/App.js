@@ -92,14 +92,14 @@ class App extends Component {
           <Banner
             {...selected}
             cover = {selected.large_cover_image}
-            children={pick.map(data => {
+          >
+            {pick.map(data => {
               return(
                 <div key={data.id} className='img-box'>
                 <img src = {data.medium_cover_image}/>
                 </div>
               ) 
             })}
-          >
           </Banner>
 
         <div style={style}>
