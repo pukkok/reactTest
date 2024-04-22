@@ -1,0 +1,6 @@
+export {default as Button} from './Button'
+export {default as Banner} from './Banner'
+export {default as Movie} from './Movie'
+export {default as SideBar} from './SideBar'
+export {default as Menu} from './Menu'
+export {default as Search} from './Search'

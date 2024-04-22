@@ -1,0 +1,73 @@
+.Button{
+    all: unset;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.Button:hover{
+    opacity: .7;
+}
+
+/* 버튼 크기 */
+
+.large{
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2rem;
+}
+
+.medium{
+    height: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 1rem;
+}
+
+.small{
+    height: 30px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-size: 0.8rem;
+}
+
+/* 버튼 색상 */
+.blue{
+    background-color: blue;
+}
+.blue:hover{
+    background-color: skyblue;
+}
+.tomato{
+    background-color: tomato;
+}
+.tomato:hover{
+    background-color: lightsalmon;
+}
+.grey{
+    background-color: grey;
+}
+.grey:hover{
+    background-color: lightgrey;
+}
+
+/* 버튼 타입 */
+.fullWidth{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* 비활성화 */
+.blocked{
+    background-color: lightgrey;
+    text-decoration: line-through;
+}
+.blocked:hover{
+    background-color: lightgrey;
+    opacity: 1;
+}

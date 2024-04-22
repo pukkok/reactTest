@@ -1,0 +1,30 @@
+.App{
+    margin: 50px auto;
+    text-align: center;
+}
+
+a{
+    all: unset;
+}
+
+.sidebar-menus{
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-menus a{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sidebar-menus a:not(:nth-child(1)){
+    border-top: 1px solid grey;
+}
+
+.sidebar-menus a:hover{
+    background-color: skyblue;
+}

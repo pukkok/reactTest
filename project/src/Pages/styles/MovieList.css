@@ -1,0 +1,27 @@
+.Movie-List{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    font-size: 1.2rem;
+}
+
+.Movie-List a{
+    cursor: pointer;
+}
+
+.Movie-List a:hover{
+    background-color: skyblue;
+}
+
+.Search{
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.Search input{
+    padding: 10px 20px;
+}
+
